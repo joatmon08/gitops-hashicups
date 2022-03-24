@@ -58,6 +58,29 @@ ingress.
 kubectl apply -f api-gateway/
 ```
 
+**Note** In this example, the API Gateway is using a HTTP listener. The Gateway also supports TCP, TCP+TLS and HTTPS listeners, if you would like to use the HTTPS listener you need to do the following:
+
+* [Generate a TLS Certificate using Vault](https://learn.hashicorp.com/tutorials/vault/kubernetes-cert-manager?in=vault/kubernetes) or another external certificate authority. 
+* Change the API Gateway service configuration to the following:
+```
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: Gateway
+metadata:
+  name: <your-gateway-name>
+spec:
+  gatewayClassName: consul-api-gateway
+  listeners:
+  - protocol: HTTPS
+    port: 443
+    name: https
+    allowedRoutes:
+      namespaces:
+        from: Same
+    tls:
+      certificateRefs:
+        - name: <insert-name-of-TLS-k8s-secret>
+```
+
 ### Create database
 
 Go to the `database/terraform` directory.
