@@ -39,27 +39,3 @@ variable "vault_tier" {
   description = "The HCP Vault tier to use when creating a Vault cluster"
   default     = "dev"
 }
-
-variable "hcp_client_id" {
-  description = "HCP Client ID."
-  type        = string
-  sensitive   = true
-}
-
-variable "hcp_client_secret" {
-  description = "HCP Client Secret."
-  type        = string
-  sensitive   = true
-}
-
-variable "aws_access_key" {
-  description = "AWS Access Key."
-  type        = string
-  sensitive   = true
-}
-
-variable "aws_secret_key" {
-  description = "AWS Secret Key."
-  type        = string
-  sensitive   = true
-}

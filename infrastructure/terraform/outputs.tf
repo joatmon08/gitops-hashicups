@@ -52,16 +52,16 @@ output "database_subnet_group_name" {
   value = module.vpc.database_subnet_group_name
 }
 
-output "kubernetes_cluster_iam_role_arn" {
-  value = aws_iam_role.cluster.arn
-}
+# output "kubernetes_cluster_iam_role_arn" {
+#   value = aws_iam_role.cluster.arn
+# }
 
-output "vault_access_key_id" {
-  value     = aws_iam_access_key.vault.id
-  sensitive = true
-}
+# output "vault_access_key_id" {
+#   value     = aws_iam_access_key.vault.id
+#   sensitive = true
+# }
 
-output "vault_secret_access_key" {
-  value     = aws_iam_access_key.vault.secret
-  sensitive = true
-}
+# output "vault_secret_access_key" {
+#   value     = aws_iam_access_key.vault.secret
+#   sensitive = true
+# }

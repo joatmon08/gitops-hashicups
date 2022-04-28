@@ -2,7 +2,6 @@ global:
   enabled: false
   name: consul
   datacenter: ${datacenter}
-  image: "hashicorp/consul-enterprise:${consul_version}-ent"
   acls:
     manageSystemACLs: true
     bootstrapToken:
@@ -42,7 +41,7 @@ controller:
 
 apiGateway:
   enabled: true
-  image: "hashicorp/consul-api-gateway:0.1.0"
+  image: "hashicorp/consul-api-gateway:0.2.0"
   managedGatewayClass:
     serviceType: LoadBalancer
     useHostPorts: true

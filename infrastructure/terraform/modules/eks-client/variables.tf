@@ -41,5 +41,5 @@ variable "consul_version" {
 variable "chart_version" {
   type        = string
   description = "The Consul Helm chart version to use"
-  default     = "0.41.1"
+  default     = "0.43.0"
 }
